@@ -151,6 +151,7 @@ export const INFORMATIVE_TIPS = [
   'Choose your Gemini model with /model…',
   'Display the privacy notice with /privacy…',
   'Restore project files to a previous state with /restore…',
+  'Review a pull request with /review <url>…',
   'Exit the CLI with /quit or /exit…',
   'Check model-specific usage stats with /stats model…',
   'Check tool-specific usage stats with /stats tools…',

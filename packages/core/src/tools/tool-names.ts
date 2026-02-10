@@ -27,6 +27,7 @@ export const ASK_USER_TOOL_NAME = 'ask_user';
 export const ASK_USER_DISPLAY_NAME = 'Ask User';
 export const EXIT_PLAN_MODE_TOOL_NAME = 'exit_plan_mode';
 export const ENTER_PLAN_MODE_TOOL_NAME = 'enter_plan_mode';
+export const SUBMIT_PR_REVIEW_TOOL_NAME = 'submit_pr_review';
 
 /**
  * Mapping of legacy tool names to their current names.
@@ -80,6 +81,7 @@ export const ALL_BUILTIN_TOOL_NAMES = [
   MEMORY_TOOL_NAME,
   ACTIVATE_SKILL_TOOL_NAME,
   ASK_USER_TOOL_NAME,
+  SUBMIT_PR_REVIEW_TOOL_NAME,
 ] as const;
 
 /**
