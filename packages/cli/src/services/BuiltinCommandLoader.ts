@@ -48,6 +48,7 @@ import { profileCommand } from '../ui/commands/profileCommand.js';
 import { quitCommand } from '../ui/commands/quitCommand.js';
 import { restoreCommand } from '../ui/commands/restoreCommand.js';
 import { resumeCommand } from '../ui/commands/resumeCommand.js';
+import { reviewCommand } from '../ui/commands/reviewCommand.js';
 import { statsCommand } from '../ui/commands/statsCommand.js';
 import { themeCommand } from '../ui/commands/themeCommand.js';
 import { toolsCommand } from '../ui/commands/toolsCommand.js';
@@ -122,6 +123,7 @@ export class BuiltinCommandLoader implements ICommandLoader {
       rewindCommand,
       await ideCommand(),
       initCommand,
+      reviewCommand,
       ...(isNightlyBuild ? [oncallCommand] : []),
       ...(this.config?.getMcpEnabled() === false
         ? [

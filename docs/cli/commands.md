@@ -232,6 +232,12 @@ Slash commands provide meta-level control over the CLI itself.
     [settings](../get-started/configuration.md). See
     [Checkpointing documentation](../cli/checkpointing.md) for more details.
 
+- **`/review`**
+  - **Description:** Reviews a pull request and posts the review to GitHub.
+  - **Usage:** `/review <url>`, `/review owner/repo#123`, or `/review 123` (when
+    inside a GitHub repo directory). Requires the GitHub CLI (`gh`) to be
+    installed and authenticated.
+
 - [**`/rewind`**](./rewind.md)
   - **Description:** Navigates backward through the conversation history,
     allowing you to review past interactions and potentially revert to a
