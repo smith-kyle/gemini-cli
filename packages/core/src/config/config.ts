@@ -31,6 +31,7 @@ import { EditTool } from '../tools/edit.js';
 import { ShellTool } from '../tools/shell.js';
 import { WriteFileTool } from '../tools/write-file.js';
 import { WebFetchTool } from '../tools/web-fetch.js';
+import { SubmitPrReviewTool } from '../tools/submit-pr-review.js';
 import { MemoryTool, setGeminiMdFilename } from '../tools/memoryTool.js';
 import { WebSearchTool } from '../tools/web-search.js';
 import { AskUserTool } from '../tools/ask-user.js';
@@ -2216,6 +2217,7 @@ export class Config {
     registerCoreTool(ShellTool, this);
     registerCoreTool(MemoryTool);
     registerCoreTool(WebSearchTool, this);
+    registerCoreTool(SubmitPrReviewTool, this);
     registerCoreTool(AskUserTool);
     if (this.getUseWriteTodos()) {
       registerCoreTool(WriteTodosTool);

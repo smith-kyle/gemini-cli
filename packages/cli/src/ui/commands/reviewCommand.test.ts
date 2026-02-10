@@ -104,7 +104,10 @@ describe('reviewCommand', () => {
     expect(content).toContain('feature-branch');
     expect(content).toContain(prMetadata);
     expect(content).toContain('diff --git a/foo b/foo');
-    expect(content).toContain('gh api repos/owner/repo/pulls/42/reviews');
+    expect(content).toContain('submit_pr_review');
+    expect(content).toContain('`owner`: "owner"');
+    expect(content).toContain('`repo`: "repo"');
+    expect(content).toContain('`prNumber`: 42');
 
     expect(mockSpawnAsync).toHaveBeenCalledTimes(2);
     expect(mockSpawnAsync).toHaveBeenCalledWith('gh', [
@@ -145,9 +148,10 @@ describe('reviewCommand', () => {
     const content = result.content as string;
     expect(content).toContain('pull request #99');
     expect(content).toContain('some-owner/some-repo');
-    expect(content).toContain(
-      'gh api repos/some-owner/some-repo/pulls/99/reviews',
-    );
+    expect(content).toContain('submit_pr_review');
+    expect(content).toContain('`owner`: "some-owner"');
+    expect(content).toContain('`repo`: "some-repo"');
+    expect(content).toContain('`prNumber`: 99');
 
     expect(mockSpawnAsync).toHaveBeenCalledWith('gh', [
       'pr',

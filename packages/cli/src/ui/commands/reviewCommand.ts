@@ -127,25 +127,23 @@ Please review this pull request thoroughly. Focus on:
 4. **Edge Cases**: Does the code handle edge cases and errors appropriately?
 5. **Tests**: Is the new or modified code adequately covered by tests?
 
-After your analysis, post a GitHub PR review with inline comments using the following steps:
+After your analysis, post a GitHub PR review with inline comments using the \`submit_pr_review\` tool.
 
-1. For each finding that refers to a specific line or range of code, create an inline comment.
-   The line numbers must refer to the new version of the file (the right side of the diff).
-   Only comment on lines that are part of the diff -- do not comment on unchanged lines.
+For each finding that refers to a specific line or range of code, create an inline comment.
+The line numbers must refer to the new version of the file (the right side of the diff).
+Only comment on lines that are part of the diff -- do not comment on unchanged lines.
 
-2. Construct a JSON payload. The payload must have:
-   - \`body\`: A concise summary of the review covering the key findings.
-   - \`event\`: "COMMENT" (neutral review status).
-   - \`comments\`: An array of inline comment objects, one per finding:
-     - \`path\`: The relative path to the changed file.
-     - \`line\`: The line number in the new version of the file.
-     - \`body\`: The specific review comment for that line.
-     For multi-line comments, include \`start_line\` to mark the beginning of the range.
-
-3. Post the review using a file (do not pass JSON through the shell — quoting will break):
-   - Use the WriteFile tool to write the JSON payload to a file (e.g. \`review_payload.json\`).
-   - Then run: \`gh api repos/${owner}/${repo}/pulls/${prNumber}/reviews --input review_payload.json -X POST\`
-   This avoids shell escaping issues with quotes and newlines in the payload.
+Call the \`submit_pr_review\` tool with these parameters:
+- \`owner\`: "${owner}"
+- \`repo\`: "${repo}"
+- \`prNumber\`: ${prNumber}
+- \`body\`: A concise summary of the review covering the key findings.
+- \`event\`: "COMMENT" (neutral review status).
+- \`comments\`: An array of inline comment objects, one per finding:
+  - \`path\`: The relative path to the changed file.
+  - \`line\`: The line number in the new version of the file.
+  - \`body\`: The specific review comment for that line.
+  For multi-line comments, include \`start_line\` to mark the beginning of the range.
 
 Begin your review now.`;
 };

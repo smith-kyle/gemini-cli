@@ -233,7 +233,8 @@ Slash commands provide meta-level control over the CLI itself.
     [Checkpointing documentation](../cli/checkpointing.md) for more details.
 
 - **`/review`**
-  - **Description:** Reviews a pull request and posts the review to GitHub.
+  - **Description:** Reviews a pull request and posts the review to GitHub via
+    the `submit_pr_review` tool.
   - **Usage:** `/review <url>`, `/review owner/repo#123`, or `/review 123` (when
     inside a GitHub repo directory). Requires the GitHub CLI (`gh`) to be
     installed and authenticated.

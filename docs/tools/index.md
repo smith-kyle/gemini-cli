@@ -86,6 +86,8 @@ Gemini CLI's built-in tools can be broadly categorized as follows:
   information across sessions.
 - **[Todo Tool](./todos.md) (`write_todos`):** For managing subtasks of complex
   requests.
+- **[Submit PR Review Tool](./submit-pr-review.md) (`submit_pr_review`):** For
+  submitting reviews to GitHub pull requests.
 
 Additionally, these tools incorporate:
 
