@@ -133,7 +133,7 @@ After your analysis, post a GitHub PR review with inline comments using the foll
    The line numbers must refer to the new version of the file (the right side of the diff).
    Only comment on lines that are part of the diff -- do not comment on unchanged lines.
 
-2. Construct a JSON payload and post the review. The payload should have:
+2. Construct a JSON payload. The payload must have:
    - \`body\`: A concise summary of the review covering the key findings.
    - \`event\`: "COMMENT" (neutral review status).
    - \`comments\`: An array of inline comment objects, one per finding:
@@ -142,11 +142,10 @@ After your analysis, post a GitHub PR review with inline comments using the foll
      - \`body\`: The specific review comment for that line.
      For multi-line comments, include \`start_line\` to mark the beginning of the range.
 
-3. Post the review:
-   \`\`\`
-   printf '%s' '<JSON_PAYLOAD>' | gh api repos/${owner}/${repo}/pulls/${prNumber}/reviews --input - -X POST
-   \`\`\`
-   Make sure to properly escape any double quotes or special characters inside the JSON.
+3. Post the review using a file (do not pass JSON through the shell — quoting will break):
+   - Use the WriteFile tool to write the JSON payload to a file (e.g. \`review_payload.json\`).
+   - Then run: \`gh api repos/${owner}/${repo}/pulls/${prNumber}/reviews --input review_payload.json -X POST\`
+   This avoids shell escaping issues with quotes and newlines in the payload.
 
 Begin your review now.`;
 };
